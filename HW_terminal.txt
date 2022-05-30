@@ -1,0 +1,40 @@
+1) Посмотреть где я - pwd
+2) Создать папку - mkdir terminal
+3) Зайти в папку - cd terminal
+4) Создать 3 папки - mkdir fold1 fold2 fold3
+5) Зайти в любоую папку - cd fold1
+6) Создать 5 файлов (3 txt, 2 json) - touch file1.txt file2.txt file3.txt file4.json file5.json
+7) Создать 3 папки - mkdir fold4 fold5 fold6
+8. Вывести список содержимого папки - ls -la
+9) + Открыть любой txt файл - cat >> file1.txt
+10) + написать туда что-нибудь, любой текст. - Написал текст в баше "London Kazan Moscow"
+11) + сохранить и выйти. - Ctrl+С
+12) Выйти из папки на уровень выше - cd ..
+—
+13) переместить любые 2 файла, которые вы создали, в любую другую папку. - mv fold1/file2.txt fold1/file3.txt fold2/
+14) скопировать любые 2 файла, которые вы создали, в любую другую папку. - cp fold2/file2.txt fold2/file3.txt fold3/
+15) Найти файл по имени - find fold1/ -name file1.txt
+16) просмотреть содержимое в реальном времени (команда grep) изучите как она работает. - tail -f fold1/file1.txt
+17) вывести несколько первых строк из текстового файла - head -3 fold1/file1.txt
+18) вывести несколько последних строк из текстового файла - tail -3 fold1/file1.txt
+19) просмотреть содержимое длинного файла (команда less) изучите как она работает. - less ../logs.txt
+20) вывести дату и время - date
+
+Задание *
+1) Отправить http запрос на сервер.
+http://162.55.220.72:5005/terminal-hw-request - curl http://162.55.220.72:5005/terminal-hw-request
+                                                curl "http://162.55.220.72:5005/get_method?name=Nikita&age=27" - GET-запрос
+                                                curl -d "name=Nikita&age=27" http://162.55.220.72:5005/get_method - POST-запрос
+2) Написать скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13 - touch myscript.sh
+                                                                                cat >> myscript.sh
+                                                                                #!/bin/bash
+                                                                                cd fold4
+                                                                                mkdir fold1 fold2 fold3
+                                                                                cd fold1
+                                                                                touch file1.txt file2.txt file3.txt file4.json file5.json
+                                                                                mkdir fold4 fold5 fold6
+                                                                                ls -la
+                                                                                mv file2.txt file3.txt ../fold2/
+                                                                                Ctrl+C
+                                                                                chmod +x ./myscript.sh
+                                                                                ./myscript.sh
